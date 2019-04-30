@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ <form action="#" th:action="@{/changedata}" th:object="${test}" method="post">
+    <label for="id">Id</label>
+    <input type="text"  th:field="*{id}" id="id" placeholder="Id">
+    
+    <label for="text">Text</label>
+    <input type="text" th:field="*{text}" id="text" placeholder="Szöveg">
+    <br/>
+    <button type="save" name="action" value="save">Save</button>   
+    <button type="decrypt" name="action" value="decrypt">decrypt</button>
+    <button type="download" name="action" value="download">download</button>
+</form>
+
+<form method="POST" action="#" th:action="@{/uploadFile}" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td><form:label path="file">Select a file to upload</form:label></td>
+            <td><input type="file" name="file" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
